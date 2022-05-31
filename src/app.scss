@@ -1,55 +1,95 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500&display=swap");
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
 }
 
-
+body {
+  background: #1b1b1b;
+}
 .navBar {
-    width: 100vw;
-    height: 60px;
+  width: 100vw;
+  height: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 20px;
+  background-color: #1b1b1b;
+
+  .image {
+    img {
+      height: 45px;
+      width: 50px;
+      color: #fff;
+      object-fit: cover;
+      border-radius: 0%;
+    }
+  }
+
+  .icons {
+    display: flex;
+    gap: 20px;
+    align-items: center;
+    justify-content: center;
+
+    a {
+      text-decoration: none;
+      color: #fff;
+      width: 30px;
+      height: 50px;
+
+      i {
+        display: table-cell;
+        text-align: center;
+        border-radius: 50%;
+        padding: 7px 7px;
+        font-size: 12px;
+        &:hover {
+          transform: scale(1.2);
+        }
+      }
+    }
+  }
+}
+.main {
+  display: flex;
+  flex-direction: column;
+  gap: 90px;
+  .content {
+    text-align: center;
+    font-size: 22px;
+    background: #1b1b1b;
+    color: #fff;
+    .gradient_text {
+      background: -webkit-linear-gradient(#a4fb8a, #5fff7f, #02c7fb);
+      background-clip: border-box;
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+  }
+  .progress_bar {
     display: flex;
     align-items: center;
-    justify-content: space-between;
-    padding: 0 20px;
-    background-color: rgb(23, 23, 23);
-
-    .image {
-        img {
-            height: 45px;
-            width: 50px;
-            color: #fff;
-            object-fit: cover;
-            border-radius: 50%;
-        }
+    justify-content: center;
+    gap: 50px;
+    .abc {
+      display: flex;
+      flex-direction: column;
+      text-align: center;
+      justify-content: center;
+      color: white;
     }
-
-
-    .icons {
-        display: flex;
-        gap: 20px;
-        align-items: center;
-        justify-content: center;
-        
-        a {
-            text-decoration: none;
-            color: #fff;
-            width: 30px;
-            height: 50px;
-
-            
-            i {
-                display: table-cell;
-                vertical-align: middle;
-                text-align: center;
-                background-color: #000;
-                border-radius: 50%;
-                border: 1px solid rgb(70, 70, 70);
-                padding:7px 7px;
-                font-size: 12px;
-              }
-
-        }
-        
-    }
+  }
+  .paragraph {
+    color: white;
+    text-align: center;
+  }
+  .lastline {
+    text-align: center;
+    color: white;
+    font-size: 15px;
+    opacity: 0.5;
+  }
 }

@@ -10,14 +10,22 @@ const Navbar = () => {
         <img src={image} alt="balchhi" />
       </a>
       <div className="icons">
-        <a href="https://www.facebook.com/Balchhireosrt">
+        <a
+          href="https://www.facebook.com/Balchhireosrt"
+          target={"_blank"}
+          rel="noreferrer"
+        >
           <i>
             <FacebookBoxFillIcon />
           </i>
         </a>
-        <a href="https://www.instagram.com/balchhiresort/">
+        <a
+          href="https://www.instagram.com/balchhiresort/"
+          target={"_blank"}
+          rel="noreferrer"
+        >
           <i>
-            <InstagramFillIcon />{" "}
+            <InstagramFillIcon />
           </i>
         </a>
       </div>

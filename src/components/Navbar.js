@@ -6,19 +6,15 @@ import FacebookBoxFillIcon from "remixicon-react/FacebookBoxFillIcon";
 const Navbar = () => {
   return (
     <div className="navBar">
-      <a href="/" className="image">
-        <img src={image} alt="balchhi" />
-      </a>
+      <div className="image">
+        <img src={image} alt="" />
+      </div>
       <div className="icons">
         <a href="https://www.facebook.com/Balchhireosrt">
-          <i>
-            <FacebookBoxFillIcon />
-          </i>
+          <i class="ri-facebook-fill"></i>
         </a>
         <a href="https://www.instagram.com/balchhiresort/">
-          <i>
-            <InstagramFillIcon />{" "}
-          </i>
+          <i class="ri-instagram-line"></i>
         </a>
       </div>
     </div>

@@ -1,7 +1,58 @@
-import React from "react";
+import React, { useRef } from "react";
 import { CircularProgress } from "@material-ui/core";
+import Countdown from "react-countdown";
+import { ReactDOM } from "react";
+
+// Random component
 
 export default function Content() {
+  const [Countdown, setCountDown] = React.useState({
+    days: "00",
+    hours: "00",
+    minutes: "00",
+    seconds: "00",
+  });
+
+  let interval = useRef();
+  let MIN = 0;
+  let MAX = 60;
+  let maxHours = 24;
+  let minHours = 0;
+  let maxDays = 365;
+  const normalise = (value) => ((value - MIN) * 100) / (MAX - MIN);
+  const normaliseHours = (value) =>
+    ((value - minHours) * 100) / (maxHours - minHours);
+  const normaliseDays = (value) => ((value - MIN) * 100) / (maxDays - MIN);
+
+  React.useEffect(() => {
+    const duration = new Date("July 30,2022 00:00:00").getTime();
+
+    interval.current = setInterval(() => {
+      const now = new Date().getTime();
+      const timeGap = duration - now;
+      const days = Math.floor(timeGap / (1000 * 60 * 60 * 24));
+      let hours = Math.floor(
+        (timeGap % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)
+      );
+      let minutes = Math.floor((timeGap % (1000 * 60 * 60)) / (1000 * 60));
+      const seconds = Math.floor((timeGap % (1000 * 60)) / 1000);
+
+      if (timeGap < 0) {
+        console.log(timeGap);
+        clearInterval(interval.current);
+      } else {
+        setCountDown({
+          days: days,
+          hours: hours,
+          minutes: minutes,
+          seconds: seconds,
+        });
+      }
+    }, 1000);
+
+    return () => clearInterval(interval.current);
+  }, []);
+
   return (
     <div className="main">
       <div className="content">
@@ -14,27 +65,29 @@ export default function Content() {
           <span
             style={{
               position: "absolute",
-              left: "40%",
-              top: "50px",
+              left: "38%",
+              top: "34px",
               fontSize: "20px",
             }}
           >
-            69
+            {Countdown.days}
           </span>
           <div style={{ position: "absolute", top: "-0.4px", left: "1.4px" }}>
             <CircularProgress
-              size="8rem"
+              size="6rem"
               style={{ color: "#545454" }}
               variant="determinate"
               value={100}
+              thickness={1.5}
             />
           </div>
 
           <CircularProgress
-            size="8rem"
+            size="6rem"
             style={{ color: "#39D5D9" }}
             variant="determinate"
-            value={69}
+            value={normaliseDays(Countdown.days)}
+            thickness={1.5}
           />
           <span>Days</span>
         </div>
@@ -43,26 +96,28 @@ export default function Content() {
           <span
             style={{
               position: "absolute",
-              left: "40%",
-              top: "50px",
+              left: "38%",
+              top: "34px",
               fontSize: "20px",
             }}
           >
-            36
+            {Countdown.hours}
           </span>
           <div style={{ position: "absolute", top: "-0.4px", left: "-1px" }}>
             <CircularProgress
-              size="8rem"
+              size="6rem"
               style={{ color: "#545454" }}
               variant="determinate"
               value={100}
+              thickness={1.5}
             />
           </div>
           <CircularProgress
-            size="8rem"
+            size="6rem"
             style={{ color: "#39D5D9" }}
             variant="determinate"
-            value={36}
+            value={normaliseHours(Countdown.hours)}
+            thickness={1.5}
           />
           <span>Hours</span>
         </div>
@@ -70,26 +125,28 @@ export default function Content() {
           <span
             style={{
               position: "absolute",
-              left: "40%",
-              top: "50px",
+              left: "38%",
+              top: "34px",
               fontSize: "20px",
             }}
           >
-            23
+            {Countdown.minutes}
           </span>
           <div style={{ position: "absolute", top: "-0.4px", left: "-1px" }}>
             <CircularProgress
-              size="8rem"
+              size="6rem"
               style={{ color: "#545454" }}
               variant="determinate"
               value={100}
+              thickness={1.5}
             />
           </div>
           <CircularProgress
-            size="8rem"
+            size="6rem"
             style={{ color: "#39D5D9" }}
             variant="determinate"
-            value={23}
+            value={normalise(Countdown.minutes)}
+            thickness={1.5}
           />
           <span>Minutes</span>
         </div>
@@ -97,26 +154,28 @@ export default function Content() {
           <span
             style={{
               position: "absolute",
-              left: "40%",
-              top: "50px",
+              left: "38%",
+              top: "34px",
               fontSize: "20px",
             }}
           >
-            12
+            {Countdown.seconds}
           </span>
           <div style={{ position: "absolute", top: "-0.4px", left: "-1px" }}>
             <CircularProgress
-              size="8rem"
+              size="6rem"
               style={{ color: "#545454" }}
               variant="determinate"
               value={100}
+              thickness={1.5}
             />
           </div>
           <CircularProgress
-            size="8rem"
+            size="6rem"
             style={{ color: "#39D5D9" }}
             variant="determinate"
-            value={12}
+            value={normalise(Countdown.seconds)}
+            thickness={1.5}
           />
           <span>Seconds</span>
         </div>

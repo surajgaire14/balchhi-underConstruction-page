@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Poppins&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500&display=swap");
 
 * {
   margin: 0;
@@ -6,150 +6,163 @@
   box-sizing: border-box;
 }
 
-body {
-  width: 100vw;
-  height: 100vh;
-  font-family: "Poppins", sans-serif;
-  background-color: #1b1b1b;
+html {
+  overflow: hidden;
 
-  .navBar {
+  body {
     width: 100vw;
-    height: 60px;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 0 20px;
+    height: 100vh;
+    font-family: "Poppins", sans-serif;
+    background-color: #1b1b1b;
 
-    .image {
-      img {
-        height: 45px;
-        width: 50px;
-        color: #fff;
-        object-fit: cover;
-        border-radius: 50%;
-        object-fit: cover;
-      }
-    }
+    .container {
+      position: relative;
+      width: 100vw;
+      height: 100vh;
 
-    .icons {
-      display: flex;
-      gap: 20px;
-      align-items: center;
-      justify-content: center;
+      .navBar {
+        width: 100vw;
+        height: 60px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 0 20px;
 
-      a {
-        text-decoration: none;
-        color: #fff;
+        .image {
+          img {
+            height: 45px;
+            width: 50px;
+            color: #fff;
+            object-fit: cover;
+            border-radius: 50%;
+            object-fit: cover;
+          }
+        }
 
-        i {
-          width: 30px;
-          height: 30px;
-          display: table-cell;
-          vertical-align: middle;
-          text-align: center;
-          padding: 7px 7px;
-          font-size: 12px;
+        .icons {
+          display: flex;
+          gap: 20px;
+          align-items: center;
+          justify-content: center;
+
+          a {
+            text-decoration: none;
+            color: #fff;
+
+            i {
+              width: 30px;
+              height: 30px;
+              display: table-cell;
+              vertical-align: middle;
+              text-align: center;
+              padding: 7px 7px;
+              font-size: 12px;
+            }
+          }
         }
       }
-    }
-  }
-  h1 {
-    text-align: center;
-    padding: 10px 0;
-    margin: 10px 0;
-    color: #fff;
-    font-size: 4rem;
+      h1 {
+        text-align: center;
+        // padding: 10px 0;
+        // margin: 10px 0;
+        color: #fff;
+        font-size: 4rem;
 
-    @media (min-width: 320px) and (max-width: 425px) {
-      font-size: 2rem;
-    }
+        @media (min-width: 320px) and (max-width: 425px) {
+          font-size: 2rem;
+        }
 
-    @media (min-width: 425px) and (max-width: 768px) {
-      font-size: 3rem;
-    }
+        @media (min-width: 425px) and (max-width: 768px) {
+          font-size: 3rem;
+        }
 
-    @media (min-width: 768px) and (max-width: 1024px) {
-      font-size: 3.5rem;
-    }
-
-    pre {
-      background: -webkit-linear-gradient(#a4fb8a, #5fff7f, #02c7fb);
-      background-clip: border-box;
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-    }
-  }
-
-  .progress__container {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-wrap: wrap;
-    gap: 50px;
-    text-align: center;
-    margin: 100px 0;
-    span {
-      color: #fff;
-      text-align: center;
-      font-size: 1.2rem;
-    }
-    p {
-      color: #fff;
-      text-align: center;
-    }
-
-    @media (min-width: 320px) and (max-width: 425px) {
-      gap: 30px;
-      margin: 20px 0 0 0;
-    }
-
-    @media (min-width: 425px) and (max-width: 768px) {
-      gap: 50px;
-      margin: 40px 0;
-    }
-
-    @media (min-width: 768px) and (max-width: 1024px) {
-      margin: 50px 0;
-    }
-  }
-
-  .about {
-    p {
-      color: #fff;
-      text-align: center;
-      font-size: 1.4rem;
-      padding: 10px 0;
-
-      // @media (min-width:425px)  and (max-width:768px){
-      //   font-size: 1rem;
-      //   margin-top: 60px;
-      // }
-      @media (min-width: 320px) and (max-width: 425px) {
-        font-size: 1rem;
-        margin-top: 80px;
+        @media (min-width: 768px) and (max-width: 1024px) {
+          font-size: 3.5rem;
+        }
       }
 
-      @media (min-width: 425px) and (max-width: 768px) {
-        font-size: 1.2rem;
-        margin-top: 30px;
+      .linear_gradient {
+        background: -webkit-linear-gradient(#a4fb8a, #5fff7f, #02c7fb);
+        background-clip: border-box;
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+      }
+      .progress__container {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 50px;
+        text-align: center;
+        margin: 50px 0;
+        span {
+          color: #fff;
+          text-align: center;
+          font-size: 1.2rem;
+        }
+        p {
+          color: #fff;
+          text-align: center;
+
+        }
+
+        @media (min-width: 320px) and (max-width: 425px) {
+          gap: 30px;
+          margin: 20px 0 0 0;
+        }
+
+        @media (min-width: 425px) and (max-width: 768px) {
+          gap: 50px;
+          margin: 40px 0;
+        }
+
+        @media (min-width: 768px) and (max-width: 1024px) {
+          margin: 50px 0;
+        }
       }
 
-      @media (min-width: 768px) and (max-width: 1024px) {
-        font-size: 1.3rem;
-        margin-top: 20px;
+      .about {
+        p {
+          color: #fff;
+          text-align: center;
+          padding: 10px 0;
+          margin-top: 100px;
+          font-size: 1.5vw;
+
+          @media screen and (max-width: 320px) {
+            margin-top: 70px;
+            font-size: 1rem;
+          }
+
+          @media (min-width: 320px) and (max-width: 425px) {
+            margin-top: 50px;
+            font-size: 2vh;
+          }
+
+          @media (min-width:425px) and (max-width:768px) {
+            font-size: 2vh;
+            margin-top: 2vh;
+          }
+
+          @media (min-width:768px) and (max-width:1024px) {
+            font-size: 2vh;
+            margin-top: 2vh;
+          }
+
+        }
       }
-    }
-  }
-  .footer {
-    position: absolute;
-    bottom: 0;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    padding: 2px 0;
-    opacity: 0.5;
-    p {
-      text-align: center;
-      color: #fff;
+      .footer {
+        position: absolute;
+        top: 97vh;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        padding: 2px 0;
+        opacity: 0.5;
+        p {
+          text-align: center;
+          color: #fff;
+        }
+      }
     }
   }
 }

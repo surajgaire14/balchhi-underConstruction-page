@@ -1,6 +1,7 @@
 import React, { useRef } from "react";
 import Navbar from "./components/Navbar";
 import CircularProgress from "@material-ui/core/CircularProgress";
+import Typography from "@material-ui/core/Typography"
 import { makeStyles } from "@material-ui/core/styles";
 import "./app.scss";
 
@@ -74,11 +75,11 @@ const App = () => {
   }, []);
 
   return (
-    <div>
+    <div className="container">
       <Navbar />
-      <h1>
-        We're <pre className="linear-gradient">Getting Ready</pre> to Launch in
-      </h1>
+      <h1>We're </h1>  
+       <h1 className="linear_gradient" > Getting Ready</h1>  
+       <h1>to Launch in</h1>
       <div className="progress__container">
         <div style={{ position: "relative" }}>
           <span style={{ position: "absolute", top: "52px", left: "48px" }}>
@@ -161,13 +162,15 @@ const App = () => {
           <p>Seconds</p>
         </div>
       </div>
-      {/* <Countdown date={Date.now() + 5000} renderer={App} /> */}
       <div className="about">
-        <p>
+        {/* <p>
           Our website is under construction,we are working very hard to give you
           the <br />
           best experience on our new website
-        </p>
+        </p> */}
+        <Typography component={"p"}>Our website is under construction,we are working very hard to give you
+          the <br />
+          best experience on our new website</Typography>
       </div>
       <div className="footer">
         <p>All rights reserved &copy;2022</p>

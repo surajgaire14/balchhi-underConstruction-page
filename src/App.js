@@ -4,6 +4,7 @@ import CircularProgress from "@material-ui/core/CircularProgress";
 import { makeStyles } from "@material-ui/core/styles";
 import "./app.scss";
 
+
 const useStyles = makeStyles(() => ({
   root: {
     position: "relative",
@@ -33,21 +34,18 @@ const App = () => {
   });
 
   let interval = useRef();
-  let MIN =0
-  let MAX = 60
-  let maxHours = 24
-  let minHours = 0
-  let maxDays = 365
+  let MIN = 0;
+  let MAX = 60;
+  let maxHours = 24;
+  let minHours = 0;
+  let maxDays = 365;
   const normalise = (value) => ((value - MIN) * 100) / (MAX - MIN);
-  const normaliseHours = (value) => ((value - minHours) * 100) / (maxHours - minHours)
-  const normaliseDays = (value) => ((value - MIN) * 100) / (maxDays - MIN)
-
+  const normaliseHours = (value) =>
+    ((value - minHours) * 100) / (maxHours - minHours);
+  const normaliseDays = (value) => ((value - MIN) * 100) / (maxDays - MIN);
 
   React.useEffect(() => {
-
-
-  const duration = new Date("July 30,2022 00:00:00").getTime()
-
+    const duration = new Date("July 30,2022 00:00:00").getTime();
 
     interval.current = setInterval(() => {
       const now = new Date().getTime();
@@ -59,10 +57,9 @@ const App = () => {
       let minutes = Math.floor((timeGap % (1000 * 60 * 60)) / (1000 * 60));
       const seconds = Math.floor((timeGap % (1000 * 60)) / 1000);
 
-
       if (timeGap < 0) {
         console.log(timeGap);
-        clearInterval(interval.current)
+        clearInterval(interval.current);
       } else {
         setCountDown({
           days: days,
@@ -110,7 +107,7 @@ const App = () => {
           <CircularProgress
             variant="determinate"
             value={100}
-            size="7rem"
+            size={window.innerWidth <= "450px" ? "5rem" : "7rem"}
             className={classes.bottom}
             thickness={1}
           />
